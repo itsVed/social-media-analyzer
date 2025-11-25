@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import UploadArea from "./components/UploadArea";
 import ResultPanel from "./components/ResultPanel";
 import { analyzeFile } from "./api";
-import sampleAi from "./test/sample_ai.json";
 
 function App() {
   const [file, setFile] = useState(null);
