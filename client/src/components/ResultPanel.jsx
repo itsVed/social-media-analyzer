@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ResultPanel({ text, ai, loading }) {
-  const [showRaw, setShowRaw] = useState(false);
   const handleCopy = () => {
     if (!text) return;
     navigator.clipboard.writeText(text).then(
@@ -113,22 +112,6 @@ function ResultPanel({ text, ai, loading }) {
                     <span className="placeholder-text">—</span>
                   )}
                 </div>
-              </div>
-
-              <div style={{ marginTop: 12 }}>
-                <button className="secondary-btn" onClick={() => setShowRaw((s) => !s)}>
-                  {showRaw ? 'Hide Raw AI Output' : 'Show Raw AI Output'}
-                </button>
-                {showRaw && (
-                  <div style={{ marginTop: 12 }}>
-                    <h3 style={{ margin: '8px 0' }}>Raw AI Output (debug)</h3>
-                    <div className="raw-box">
-                      <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word', margin: 0 }}>
-{JSON.stringify(ai || structured, null, 2)}
-                      </pre>
-                    </div>
-                  </div>
-                )}
               </div>
             </>
           )}

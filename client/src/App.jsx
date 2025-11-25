@@ -77,14 +77,6 @@ function App() {
           >
             {loading ? "Analyzing..." : "Analyze Content"}
           </button>
-          <div style={{ marginTop: 8 }}>
-            <button className="secondary-btn" onClick={handlePreviewSample}>
-              Preview Sample Result
-            </button>
-            <button className="secondary-btn" onClick={handleLoadServerResult} style={{ marginLeft: 8 }}>
-              Load Last Server Result
-            </button>
-          </div>
           {error && <p className="error-text">{error}</p>}
         </section>
 
